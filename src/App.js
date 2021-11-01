@@ -1,9 +1,24 @@
-import { Component, createElement } from 'react';
-import './App.css';
+import { Component } from "react";
+import "./App.css";
 
-class App extends Component{
+class App extends Component {
+  FooBar = () => "We Move";
   render() {
-    return createElement("div", {className: "App"}, createElement("h2", null, "Testing Create Element without JSX"))
+    const name = "Adebayo";
+
+    const foo = () => "FooBar";
+
+    const Loading = "true";
+    const showName = true;
+    return (
+      <div className="App">
+        {!Loading ? (
+          <h4>Loading..</h4>
+        ) : (
+          <h2>Hello {showName && name.toUpperCase()}</h2>
+        )}
+      </div>
+    );
   }
 }
 
